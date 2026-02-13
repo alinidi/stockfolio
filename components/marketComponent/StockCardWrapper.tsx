@@ -5,7 +5,7 @@ import { useAppDispatch } from '@/store/hooks';
 import { buyAsset } from '@/features/portfolioSlice';
 import { useState } from 'react';
 import { StockCard } from './StockCard';
-import { BuyModal } from '../ui/modal/Modal';
+import { BuyModal } from '../ui/modal/BuyModal';
 
 export const StockCardContainer = ({ symbol }: { symbol: string }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);

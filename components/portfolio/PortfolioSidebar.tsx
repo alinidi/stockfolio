@@ -5,7 +5,6 @@ import { PortfolioItem } from './PortfolioItems';
 
 export const PortfolioSidebar = () => {
     const { items, balance } = useAppSelector((state) => state.portfolio);
-
     const totalValue = items.reduce(
         (sum, item) => sum + item.quantity * item.price,
         0
@@ -43,7 +42,10 @@ export const PortfolioSidebar = () => {
             ) : (
                 <div className="space-y-3 max-h-100 overflow-y-auto pr-2">
                     {items.map((item) => (
-                        <PortfolioItem key={item.symbol} item={item} />
+                        <PortfolioItem
+                            key={`${item.symbol}-${item.price}`}
+                            item={item}
+                        />
                     ))}
                 </div>
             )}

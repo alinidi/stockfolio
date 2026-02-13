@@ -1,11 +1,11 @@
 'use client';
 
 import { useGetQuoteQuery } from '@/api/twelveApi';
-import { StockCard } from '../stockCard/StockCard';
 import { useAppDispatch } from '@/store/hooks';
 import { buyAsset } from '@/features/portfolioSlice';
 import { useState } from 'react';
-import { BuyModal } from '../modal/Modal';
+import { StockCard } from './StockCard';
+import { BuyModal } from '../ui/modal/Modal';
 
 export const StockCardContainer = ({ symbol }: { symbol: string }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,7 +37,7 @@ export const StockCardContainer = ({ symbol }: { symbol: string }) => {
                 // currency={data.currency}
                 // change={data.change}
                 // percent_change={data.percent_change}
-                // onBuy={handleBuy}
+                // onBuy={() => setIsModalOpen(true)}
                 symbol="AAPL"
                 name="APPLE"
                 price="254.16489"

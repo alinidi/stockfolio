@@ -1,6 +1,6 @@
 'use client';
 
-import { StockCardContainer } from '../stockCardWrapper/StockCardWrapper';
+import { StockCardContainer } from './StockCardWrapper';
 
 const POPULAR_STOCKS = [
     'AAPL',
@@ -17,7 +17,7 @@ const POPULAR_STOCKS = [
 
 export const MarketTable = () => {
     return (
-        <div className="flex flex-wrap gap-2 justify-center">
+        <div className="flex flex-wrap gap-3 justify-center">
             {POPULAR_STOCKS.map((symbol) => (
                 <StockCardContainer key={symbol} symbol={symbol} />
             ))}

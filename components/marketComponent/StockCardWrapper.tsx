@@ -31,20 +31,20 @@ export const StockCardContainer = ({ symbol }: { symbol: string }) => {
     return (
         <>
             <StockCard
-                // symbol={data.symbol}
-                // name={data.name}
-                // price={data.close}
-                // currency={data.currency}
-                // change={data.change}
-                // percent_change={data.percent_change}
-                // onBuy={() => setIsModalOpen(true)}
-                symbol="AAPL"
-                name="APPLE"
-                price="254.16489"
-                currency="USD"
-                change="+2.03"
-                percent_change="0.05"
+                symbol={data.symbol}
+                name={data.name}
+                price={data.close}
+                currency={data.currency}
+                change={data.change}
+                percent_change={data.percent_change}
                 onBuy={() => setIsModalOpen(true)}
+                // symbol="AAPL"
+                // name="APPLE"
+                // price="254.16489"
+                // currency="USD"
+                // change="+2.03"
+                // percent_change="0.05"
+                // onBuy={() => setIsModalOpen(true)}
             />
             <BuyModal
                 isOpen={isModalOpen}

@@ -7,20 +7,21 @@ import {
 import { useAppDispatch } from '@/store/hooks';
 import { useState } from 'react';
 import { SellModal } from '../ui/modal/SellModal';
+import { useGetQuoteQuery } from '@/api/twelveApi';
 
 export const PortfolioItem = ({ item }: { item: PortfolioItemType }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const dispatch = useAppDispatch();
 
-    const currentPrice = item.price * 1.05;
-    const profit = (currentPrice - item.price) * item.quantity;
-    const profitPercent = ((currentPrice - item.price) / item.price) * 100;
-
-    // const { data } = useGetQuoteQuery(item.symbol);
-    // const currentPrice = data ? parseFloat(data.close) : item.price;
-
+    // const currentPrice = item.price * 1.05;
     // const profit = (currentPrice - item.price) * item.quantity;
     // const profitPercent = ((currentPrice - item.price) / item.price) * 100;
+
+    const { data } = useGetQuoteQuery(item.symbol);
+    const currentPrice = data ? parseFloat(data.close) : item.price;
+
+    const profit = (currentPrice - item.price) * item.quantity;
+    const profitPercent = ((currentPrice - item.price) / item.price) * 100;
 
     const handleSell = (quantity: number) => {
         dispatch(

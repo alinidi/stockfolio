@@ -3,7 +3,7 @@
 
 A pet project: investment portfolio simulator with real-time data from Twelve Data.
 
-<img width="1261" height="777" alt="stockfolio" src="https://github.com/user-attachments/assets/c868df62-3938-4224-a3f7-6db8f96fc810" />
+<img width="662" height="1298" alt="real data" src="https://github.com/user-attachments/assets/03042c52-5a84-4215-a8c0-31e4ff164dc0" />
 
 ## Tech Stack
 
@@ -11,7 +11,17 @@ A pet project: investment portfolio simulator with real-time data from Twelve Da
 - **TypeScript**
 - **Redux Toolkit** + **RTK Query**
 - **Tailwind CSS**
-- **Twelve Data API - https://twelvedata.com/** — real stock prices
+- **Twelve Data API - https://twelvedata.com/** — real stock prices *
+- 
+## Note on API Limitations:
+- **800 requests per day** shared across all stocks
+- **8 requests per minute** rate limit
+- Data updates every **10-30 seconds** (polling interval)
+
+Due to these limitations:
+- Some stocks may load slower than others
+- If you see missing data, it's likely the rate limit was reached
+- The portfolio may take a few seconds to refresh prices
 
 ## Features
 
@@ -25,13 +35,8 @@ A pet project: investment portfolio simulator with real-time data from Twelve Da
 
 ## Screenshots
 
-### Mobile view
-<img width="486" height="966" alt="mobile" src="https://github.com/user-attachments/assets/7630deca-5a68-4f73-b4e8-5c6305d4a861" />
-
-### Buy modal
 <img width="903" height="880" alt="buy" src="https://github.com/user-attachments/assets/c8f03208-7366-46ad-8887-cf3c87a21162" />
 
-### Sell modal
 <img width="902" height="817" alt="sell" src="https://github.com/user-attachments/assets/fcfe23c1-8e4c-484e-a9a2-9efb2f89c794" />
 
 ## Getting Started

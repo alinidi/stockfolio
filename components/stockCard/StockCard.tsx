@@ -5,6 +5,7 @@ type Props = {
     currency: string;
     change?: string;
     percent_change?: string;
+    onBuy?: () => void;
 };
 
 export const StockCard = ({
@@ -14,6 +15,7 @@ export const StockCard = ({
     currency,
     change,
     percent_change,
+    onBuy,
 }: Props) => {
     const isPositive = change && parseFloat(change) >= 0;
 
@@ -51,7 +53,10 @@ export const StockCard = ({
                         </span>
                     </p>
                 </div>
-                <button className="bg-blue-600 hover:cursor-pointer hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-blue-500/25 ml-5">
+                <button
+                    onClick={onBuy}
+                    className="bg-blue-600 hover:cursor-pointer hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-blue-500/25 ml-5"
+                >
                     Buy
                 </button>
             </div>

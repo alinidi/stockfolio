@@ -8,11 +8,6 @@ export const Header = () => {
     return (
         <header className="bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 border-b border-gray-700 px-6 py-4 flex justify-between items-center shadow-lg">
             <div className="flex items-center gap-3">
-                <div className="bg-blue-600/20 p-2 rounded-xl">
-                    <span className="text-2xl" role="img" aria-label="chart">
-                        📈
-                    </span>
-                </div>
                 <div>
                     <span className="text-2xl font-bold bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                         Stockfolio
